@@ -14,19 +14,19 @@ Subsystems (Builtin commands, Environment Variables)***.
 Ourshell follows Betty style
 
 ## ourshell Comprehends at least the below tasks
-	* Handle command lines with arguments
-	* Handle the PATH
-	* Implement the exit built-in, that exits the shell
-	* Implement the env built-in, that prints the current environment
-	* Write your own getline function
-	* handle arguments for the built-in exit
-	* Implement the setenv and unsetenv builtin commands
-	* Implement the builtin command cd
-	* Handle the commands separator ;
-	* Handle the && and || shell logical operators
-	* Implement the alias builtin command
-	* Handle variables replacement
-	  * Handle the $? variable
-	  * Handle the $$ variable
+ Handle command lines with arguments
+ Handle the PATH
+ Implement the exit built-in, that exits the shell
+ Implement the env built-in, that prints the current environment
+ Write your own getline function
+ handle arguments for the built-in exit
+ Implement the setenv and unsetenv builtin commands
+ Implement the builtin command cd
+ Handle the commands separator ;
+ Handle the && and || shell logical operators
+ Implement the alias builtin command
+ Handle variables replacement
+	* Handle the $? variable
+	* Handle the $$ variable
 
 
