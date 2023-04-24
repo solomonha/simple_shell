@@ -13,8 +13,47 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <erron.h>
+#include<limit.h>
+#include<fcntl.h>
+/**
+ * struct data - programs data
+ * @name: the name of the executble
+ * @input: input to be read by getline
+ * @command: the first command typed by the user
+ * @exec_counter: number of executed commands
+ * @file_descriptor: file descriptor to the input of commands
+ * @tokens : pointer to array of tokinized inputs
+ * @env: copy of enviroment
+ * @alias_list: array of pointers with aliases
+ *
+ */
+typedef struct data
+{
+	char *name;
+	char *input;
+	char *command;
+	int exec_counter;
+	int file_descriptor;
+	int **tokens;
+	char **env;
+	char **alias_list;
+}data;
+
+extern char **environ;
+
 
 /* Read line function prototypes */
 char *read_line(void);
+
+
+int _exit(data d);
+char *_strtok(char *string, char *delim);
+int checker(char *array_command[], int i, char array_operators[]);
+int _getline(data *d);
+int _env(void);
+int _strlen(char *string);
+char *_strdup(char *string);
+int _strcmp(char *string1, char *string2, int number);
 
 #endif
