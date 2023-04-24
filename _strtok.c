@@ -1,5 +1,10 @@
 #include"shell.h"
-
+/**
+ * _strtok- separates strings with delimiters
+ * @string: string input
+ * @delim; char that mark of the strings to be a part
+ * Return : the created token's pointer
+ */
 
 char *_strtok(char *string, char *delim)
 {
