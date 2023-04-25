@@ -44,7 +44,7 @@ extern char **environ;
 
 /* Read line function prototypes */
 char *read_line(void);
-
+int execute(char **args);
 
 int shell_exit(void);
 char *_strtok(char *string, char *delim);
