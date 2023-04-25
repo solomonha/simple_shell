@@ -13,8 +13,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <erron.h>
-#include<limit.h>
+#include <errno.h>
 #include<fcntl.h>
 /**
  * struct data - programs data
@@ -45,7 +44,7 @@ extern char **environ;
 
 /* Read line function prototypes */
 char *read_line(void);
-
+int execute(char **args);
 
 int _exit(data d);
 char *_strtok(char *string, char *delim);
