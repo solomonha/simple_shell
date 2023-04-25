@@ -13,8 +13,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <erron.h>
-#include<limit.h>
+#include <errno.h>
 #include<fcntl.h>
 /**
  * struct data - programs data
@@ -47,11 +46,11 @@ extern char **environ;
 char *read_line(void);
 
 
-int _exit(data d);
+int shell_exit(void);
 char *_strtok(char *string, char *delim);
 int checker(char *array_command[], int i, char array_operators[]);
 int _getline(data *d);
-int _env(void);
+int shell_env(void);
 int _strlen(char *string);
 char *_strdup(char *string);
 int _strcmp(char *string1, char *string2, int number);
