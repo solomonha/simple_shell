@@ -45,7 +45,8 @@ extern char **environ;
 /* Read line function prototypes */
 char *read_line(void);
 int execute(char **args);
-
+int execute_commands(char **args);
+void print_prompt(void);
 int _exit(data d);
 char *_strtok(char *string, char *delim);
 int checker(char *array_command[], int i, char array_operators[]);
