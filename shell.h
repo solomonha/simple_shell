@@ -15,6 +15,11 @@
 #include <sys/wait.h>
 #include <errno.h>
 #include<fcntl.h>
+
+
+
+extern char **environ;
+
 /**
  * struct data - programs data
  * @name: the name of the executble
@@ -39,7 +44,18 @@ typedef struct data
 	char **alias_list;
 }data;
 
-extern char **environ;
+/**
+ * struct data - programs data
+ * @name: the name of the command
+ * @f: function pointer used to call and execute
+ * the command's function
+ */
+
+struct builtin
+{
+	char *name;
+	int (*f)(void);
+};
 
 
 /* Read line function prototypes */

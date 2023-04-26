@@ -1,7 +1,7 @@
 #include "shell.h"
-/* exit - exits the shell
- * @args: string
- * Return : an integer, zero if sucess
+/**
+ * shell_exit - exits the shell
+ * Return: nothing
  */
 int shell_exit(void)
 {
