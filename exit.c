@@ -3,7 +3,7 @@
  * @args: string
  * Return : an integer, zero if sucess
  */
-int exit(data d)
+int _exit(data d)
 {
         int i;
 
