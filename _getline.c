@@ -71,7 +71,7 @@ int _getline(data *d)
 		} while (array_command[i++]);
 	}
 	d->input = array_command[0];
-	for (i = 0; array_command[i]; i++
+	for (i = 0; array_command[i]; i++)
 			{
 			array_command[i] = array_command[i + 1];
 			array_operators[i] = array_operators[i + 1];

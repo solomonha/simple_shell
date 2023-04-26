@@ -1,17 +1,15 @@
-#include "shell.h"
+#include"shell.h"
 /**
- * builtin_execute - executes the built in functions
- * @tokens: arguments being passed
- * Return: tokens
+ * builtin_exe - executes the built in function
+ * @tokens: the arguments being passed
+ * Return: int value
  */
-int builtin_execute(char **tokens)
+int builtin_exe(char **tokens)
 {
 	int status;
-	unsigned int length;
-	unsigned int num;
-	unsigned int i;
+	unsigned int length, num, i = 0, j;
 
-	built_s builtin[] = {
+	builtin builtins[] = {
 		{"exit", shell_exit},
 		{"env", shell_env},
 		{NULL, NULL}
@@ -19,33 +17,17 @@ int builtin_execute(char **tokens)
 
 	if (tokens[0] == NULL)
 		return (1);
-
 	length = _strlen(tokens[0]);
-
-	num = shell_num_builtins(builtin);
-	for (i = 0; i < num; i++)
+	while (builtins[i].name != NULL)
+		i++;
+	num = i;
+	for (j = 0; j < num; j++)
 	{
-		if (_strcmp(tokens[0], builtin[i].name, length) == 0)
+		if (_strcmp(tokens[0], builtins[j].name, length) == 0)
 		{
-			status = (builtin[i].f)();
+			status = (builtins[j].f)();
 			return (status);
 		}
 	}
 	return (1);
-}
-
-/**
- * shell_num_builtins - this check num built-ins
- * @builtin: takes the builtin to be counted
- * Return: num of built-ins
- */
-int shell_num_builtins(built_s builtin[])
-{
-	unsigned int i;
-
-	i = 0;
-	while (builtin[i].name != NULL)
-		i++;
-
-	return (i);
 }

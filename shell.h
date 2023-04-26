@@ -45,17 +45,17 @@ typedef struct data
 }data;
 
 /**
- * struct data - programs data
- * @name: the name of the command
+ * struct builtin - list of builtins
+ * @name: the name of the builtin command
  * @f: function pointer used to call and execute
  * the command's function
  */
 
-struct builtin
+typedef struct builtin
 {
 	char *name;
 	int (*f)(void);
-};
+} builtin;
 
 
 /* Read line function prototypes */
