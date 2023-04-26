@@ -61,8 +61,14 @@ typedef struct builtin
 /* Read line function prototypes */
 char *read_line(void);
 int execute(char **args);
+<<<<<<< HEAD
+int execute_commands(char **args);
+void print_prompt(void);
+int _exit(data d);
+=======
 
 int shell_exit(void);
+>>>>>>> 77498354f6e3f24d85e1b88b6ee0304a80dcc2da
 char *_strtok(char *string, char *delim);
 int checker(char *array_command[], int i, char array_operators[]);
 int _getline(data *d);
