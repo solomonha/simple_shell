@@ -16,6 +16,7 @@ void print_prompt(void)
 		line = _getline();
 		args = _strtok(line);
 		status = getline(args, &length, stdin);
+		exe_args(args);
 		free(line);
 		free(args);
 		if (status >= 1)

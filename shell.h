@@ -72,5 +72,6 @@ int shell_env(void);
 int _strlen(char *string);
 char *_strcpy(char *string);
 int _strcmp(char *str1, char *str2, int num);
+void exe_args(char **args);
 
 #endif
