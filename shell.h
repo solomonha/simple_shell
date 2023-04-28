@@ -61,7 +61,6 @@ typedef struct builtin
 
 /* Read line function prototypes */
 int execute(char **args);
-int execute_commands(char **args);
 void print_prompt(void);
 
 int shell_exit(void);
@@ -72,6 +71,6 @@ int shell_env(void);
 int _strlen(char *string);
 char *_strcpy(char *string);
 int _strcmp(char *str1, char *str2, int num);
-void exe_args(char **args);
+size_t exe_args(char *line, char **args);
 
 #endif
