@@ -13,7 +13,7 @@ void print_prompt(void)
 	do {
 		printf("ourshell$ ");
 		line = _getline();
-		args = _strtok(line);
+		args = strtok(line);
 		status = execute_commands(args);
 		free(line);
 		free(args);
