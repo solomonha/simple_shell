@@ -2,6 +2,7 @@
 #define SHELL_H
 
 #define RL_BUFFER_SIZE 1024
+#define DELIM "\t\n\r\a"
 
 /* LIBRARIES */
 #include <stdio.h>
@@ -59,15 +60,14 @@ typedef struct builtin
 
 
 /* Read line function prototypes */
-char *read_line(void);
 int execute(char **args);
 int execute_commands(char **args);
 void print_prompt(void);
 
 int shell_exit(void);
-char *_strtok(char *string, char *delim);
+char **_strtok(char *string);
 int checker(char *array_command[], int i, char array_operators[]);
-int _getline(data *d);
+char *_getline(void);
 int shell_env(void);
 int _strlen(char *string);
 char *_strcpy(char *string);

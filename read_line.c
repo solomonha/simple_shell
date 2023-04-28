@@ -4,7 +4,7 @@
  * read_line - Read the command from standard input
  * Return: A pointer that points to a string with the line content
  */
-char *read_line(void)
+char *_getline(void)
 {
 	int bufsize = RL_BUFFER_SIZE;
 	int line = 0;

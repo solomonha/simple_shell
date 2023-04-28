@@ -9,12 +9,13 @@ void print_prompt(void)
 	char *line;
 	char **args;
 	int status = -1;
+	size_t length = 0;
 
 	do {
 		printf("ourshell$ ");
 		line = _getline();
-		args = strtok(line);
-		status = execute_commands(args);
+		args = _strtok(line);
+		status = getline(args, &length, stdin);
 		free(line);
 		free(args);
 		if (status >= 1)
@@ -24,5 +25,3 @@ void print_prompt(void)
 	} while (status == -1);
 
 }
-
-

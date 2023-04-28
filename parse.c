@@ -7,7 +7,7 @@
  */
 char **split_line(char *line)
 {
-	int bufsize = TOK_BUFSIZE, index = 0;
+	int bufsize = RL_BUFFER_SIZE, index = 0;
 	char **args = malloc(bufsize * sizeof(char *));
 	char *token;
 
@@ -16,14 +16,14 @@ char **split_line(char *line)
 		dprintf(STDERR_FILENO, "allocation error\n");
 		exit(EXIT_FAILURE);
 	}
-	token = strtok(line, TOK_DELIM);
+	token = strtok(line, DELIM);
 	while (token != NULL)
 	{
 		args[index] = token;
-		indx++;
+		index++;
 		if (index >= bufsize)
 		{
-			bufsize += TOK_BUFSIZE;
+			bufsize += RL_BUFFER_SIZE;
 			args = realloc(args, bufsize * sizeof(char *));
 			if (!args)
 			{
@@ -31,7 +31,7 @@ char **split_line(char *line)
 				exit(EXIT_FAILURE);
 			}
 		}
-		token = strtok(NULL, TOK_DELIM);
+		token = strtok(NULL, DELIM);
 	}
 	args[index] = NULL;
 	return (args);

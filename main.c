@@ -4,7 +4,7 @@
  * main - function that checks if our shell is called
  * Return: 0 on success
  */
-int main(void);
+int main(void)
 {
 	if (isatty(STDIN_FILENO) == 1)
 	{

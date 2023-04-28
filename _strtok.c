@@ -2,41 +2,29 @@
 /**
  * _strtok - separates strings with delimiters
  * @string: string input
- * @delim: char that mark of the strings to be a part
  * Return: the created token's pointer
  */
-char *_strtok(char *string, char *delim)
+char **_strtok(char *args)
 {
-	int j;
-	static char *str;
-	char *strcpy;
+        int bufsize, i = 0;
+        char **tokens;
+        char *token;
 
-	if (string != NULL)
-		str = string;
-	for (; *str != '\0'; str++)
-	{
-		for (j = 0; delim[j] != '\0'; j++)
-		{
-			if (*str == delim[j])
-				break;
-		}
-		if (delim[j] == '\0')
-			break;
-	}
-	strcpy = str;
-	if (*strcpy == '\0')
-		return (NULL);
-	for (; *str != '\0'; str++)
-	{
-		for (j = 0; delim[j] != '\0'; j++)
-		{
-			if (*str == delim[j])
-			{
-				*str = '\0';
-				str++;
-				return (strcpy);
-			}
-		}
-	}
-	return (strcpy);
+        bufsize = RL_BUFFER_SIZE;
+        tokens = malloc(bufsize * sizeof(char*));
+        if (!tokens)
+        {
+                fprintf(stderr, "error\n");
+                exit(EXIT_FAILURE);
+        }
+        token = strtok(args, DELIM);
+        while (token != NULL)
+        {
+                tokens[i] = token;
+                token = strtok(NULL, "\n\t\r");
+                i++;
+        }
+  tokens[i] = NULL;
+  return (tokens);
 }
+
