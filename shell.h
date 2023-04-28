@@ -42,7 +42,7 @@ typedef struct data
 	char **tokens;
 	char **alias_list;
 	char *name;
-}data;
+} data;
 
 /**
  * struct builtin - list of builtins
@@ -63,14 +63,7 @@ char *read_line(void);
 int execute(char **args);
 int execute_commands(char **args);
 void print_prompt(void);
-/**
- * =======
- */
 
-
-/**
- * >>>>>>> 77498354f6e3f24d85e1b88b6ee0304a80dcc2da
- */
 int shell_exit(void);
 char *_strtok(char *string, char *delim);
 int checker(char *array_command[], int i, char array_operators[]);
